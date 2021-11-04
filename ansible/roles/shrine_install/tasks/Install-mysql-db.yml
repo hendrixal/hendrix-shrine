@@ -1,0 +1,11 @@
+# Install MYSQL DB
+
+---
+  - hosts: shrinenode02
+    become: true
+    
+      - name: Install Maria db server
+        shell: "sudo yum -y install mariadb-server" 
+      - name: Ensure maria db starts
+        service: mariadb-server state=started enabled=yes
+

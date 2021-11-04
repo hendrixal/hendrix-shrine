@@ -1,0 +1,8 @@
+# shrine_conf_setup
+
+---
+  - hosts: shrinenode02
+
+      - name: copying shrine.conf to tomcat/lib directory
+        shell: "cp /tmp/shrine-setup/qep-and-adapter-shrine.conf /opt/shrine/tomcat/lib/shrine.conf"
+

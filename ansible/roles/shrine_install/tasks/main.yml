@@ -1,0 +1,25 @@
+# tasks file for roles/shrine_install
+
+---
+
+- include: system services:update.yml
+
+- include: JDK_11_Install_Playbook.yml
+
+- include: tomcat configuration.yml
+
+- include: environment variables tomcat_java.yml
+
+- include: install-mysql-db.yml
+
+- include: configure_mysql_db.yml
+
+- include: configuring_database_connections.yml
+
+- include: installing_shrine.yml
+
+- include: shrine_conf_setup.yml
+
+- include: installing_lucene_indicies.yml
+
+- include: install_keystore_adaptMapp.yml

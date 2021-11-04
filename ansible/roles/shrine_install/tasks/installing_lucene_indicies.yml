@@ -1,0 +1,15 @@
+# installing lucene indicies
+
+---
+  - hosts: shrinenode02
+    become: true
+
+      - name: change directory
+        shell: "cd /opt/shrine/tomcat/lib"
+      
+      - name: install lucene indicies
+        shell: "wget https://shrine-act-artifacts.s3.amazonaws.com/lucene-indices/lucene_index-2.0.1-cov3-3.1.0-SHRINE-3.1.0.zip -O lucene_index.zip"
+        shell: "wget https://shrine-act-artifacts.s3.amazonaws.com/lucene-indices/suggest_index-2.0.1-cov3-3.1.0-SHRINE-3.1.0.zip -O suggest_index.zip"
+        shell: "unzip lucene_index.zip"
+        shell: "unzip suggest_index.zip"
+        shell: "rm lucene_index.zip suggest_index.zip"
