@@ -1,0 +1,7 @@
+# setup-app.yml
+
+---
+  - hosts: shrinenode02
+    become: true
+    roles:
+      - shrine

@@ -1,0 +1,5 @@
+# JDK 11 Install Playbook
+
+--- 
+- name: Installing JDK 11
+  shell: "sudo yum -y install java-11-openjdk-devel"
