@@ -1,0 +1,13 @@
+# installing shrine 
+
+---
+
+- name: change directory
+  shell: "cd /opt/shrine/tomcat/webapps"
+
+- name: clear out tomcat/webapps
+  shell: "rm -rf *"
+
+- name: install shrine.war
+  shell: "wget https://repo.open.catalyst.harvard.edu/nexus/content/groups/public/net/shrine/shrine-api-war/3.1.0/shrine-api-war-3.1.0.war -O shrine-api.war"
+  

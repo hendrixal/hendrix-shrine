@@ -1,0 +1,15 @@
+# hosts-dev inventory file
+
+[shrine_servers]
+shrinehub ansible_host=34.225.207.1
+shrinenode01 ansible_host=54.161.30.239
+shrinenode02 ansible_host=3.82.154.213
+
+[i2b2_servers]
+i2b2hub ansible_host=52.5.7.159
+i2b2node01 ansible_host=54.205.197.196
+i2b2node02 ansible_host=54.243.124.191
+
+
+[local]
+control ansible_connection=local
