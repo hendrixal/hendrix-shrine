@@ -26,16 +26,16 @@
   shell: "mysql -u shrine -pdemouser"
 
 - name: creating mysql databases 1
-  command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE adapterAuditDB;"
+  command: mysql -u shrine -p demouser --execute "CREATE DATABASE adapterAuditDB;"
 
 - name: creating mysql databases 2
-  command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE qepAuditDB;"
+  command: mysql -u shrine -p demouser --execute "CREATE DATABASE qepAuditDB;"
 
 - name: creating mysql databases 3
-  command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE stewardDB;"
+  command: mysql -u shrine -p demouser --execute "CREATE DATABASE stewardDB;"
 
 - name: creating mysql databases 4
-  command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE shrine_query_history;"
+  command: mysql -u shrine -p demouser --execute "CREATE DATABASE shrine_query_history;"
 
 
 - name: installing mysql schemas 1
