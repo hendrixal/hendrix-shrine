@@ -1,8 +1,0 @@
-# JDK 11 Install Playbook
-
---- 
-  - hosts: shrinenode02
-    become: true
-    
-      - name: Installing JDK 11
-        shell: "sudo yum -y install java-11-openjdk-devel"

@@ -1,0 +1,8 @@
+# installing adapter mappings
+
+---
+- name: change directory
+  shell: "cd /opt/shrine/tomcat/lib"
+
+- name: download ACT Demo Ontology
+  shell: "wget https://shrine-dev-files-001.s3.amazonaws.com/AdapterMappings.csv -O /opt/shrine/tomcat/lib/AdapterMappings.csv"
