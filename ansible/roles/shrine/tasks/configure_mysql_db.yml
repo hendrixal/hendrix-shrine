@@ -19,7 +19,7 @@
     priv: '*.*:ALL,GRANT'
 
     
-  shell: mysql -u root --execute "CREATE USER 'shrine'@'localhost' IDENTIFIED BY 'demouser';"
+###  shell: mysql -u root --execute "CREATE USER 'shrine'@'localhost' IDENTIFIED BY 'demouser';"
 
 - name: grant all privilages
   shell: "GRANT ALL privileges ON *.* TO 'shrine'@'localhost';"
