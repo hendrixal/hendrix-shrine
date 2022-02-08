@@ -12,7 +12,7 @@
 
 - include: install-mysql-db.yml
 
-# - include: configure_mysql_db.yml
+- include: configure_mysql_db.yml
 
 - include: configuring_database_connections.yml
 
