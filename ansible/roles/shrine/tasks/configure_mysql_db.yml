@@ -15,13 +15,11 @@
   shell: mysql -u root --execute "CREATE USER 'shrine'@'localhost';"
 
 - name: grant all privilages
-  shell: "GRANT ALL privileges ON *.* TO 'shrine'@'localhost';"
+  shell: mysql -u root --execute "GRANT ALL privileges ON *.* TO 'shrine'@'localhost';"
 
 - name: flush privilages
-  shell: "FLUSH PRIVILEGES;"
+  shell: mysql -u root --execute "FLUSH PRIVILEGES;"
 
-- name: exit mysql
-  shell: "exit"
   
 
 - name: create mysql as shrine user
