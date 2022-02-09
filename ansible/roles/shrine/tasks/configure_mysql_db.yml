@@ -11,10 +11,9 @@
 - name: installing unzip
   shell: "sudo yum install zip unzip -y"
 
-  
+- name: creating shrine database user
+  shell: mysql -u root --execute "CREATE USER 'shrine'@'localhost' IDENTIFIED BY 'demouser';"
 
-- name: create mysql as shrine user
-  shell: "mysql -u shrine -pdemouser"
 
 - name: creating mysql databases 1
   command: mysql -u shrine -p demouser --execute "CREATE DATABASE adapterAuditDB;"
