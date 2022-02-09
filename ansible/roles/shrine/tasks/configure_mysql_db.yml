@@ -23,7 +23,7 @@
   
 
 - name: create mysql as shrine user
-  shell: "mysql -u shrine -pdemouser"
+  shell: "mysql -u shrine -p demouser"
 
 - name: creating mysql databases 1
   command: mysql -u shrine -p demouser --execute "CREATE DATABASE adapterAuditDB;"
