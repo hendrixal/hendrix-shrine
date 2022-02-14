@@ -13,7 +13,7 @@
     shell: "wget https://repo.open.catalyst.harvard.edu/nexus/content/groups/public/net/shrine/shrine-setup/3.1.0/shrine-setup-3.1.0-dist.zip"
  
   - name: unzip shrine-setup.zip
-     shell: "-O shrine-setup.zip"
+    shell: "-O shrine-setup.zip"
       
   - name: create mysql as shrine user
     shell: "mysql -u shrine -pdemouser"
