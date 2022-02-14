@@ -15,8 +15,8 @@
  # - name: unzip shrine-setup.zip
   #  shell: "-O shrine-setup.zip"
       
-  - name: create mysql as shrine user
-    shell: "mysql -u shrine -pdemouser"
+ # - name: create mysql as shrine user
+  #  shell: "mysql -u shrine -pdemouser"
       
   - name: creating mysql databases
     command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE adapterAuditDB;"
