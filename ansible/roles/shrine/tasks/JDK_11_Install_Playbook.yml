@@ -35,3 +35,12 @@
 
 - name: permissions 1
   shell: "cd /opt/shrine/tomcat | chgrp -R shrine /opt/shrine/tomcat"
+
+- name: permissions 2
+  shell: "chmod -R g+r /opt/shrine/tomcat/conf"
+
+- name: permissions 3
+  shell: "chmod g+x /opt/shrine/tomcat/conf"
+
+- name: permissions 4
+  shell: "cd /opt/shrine/tomcat | chown -R shrine webapps/ work/ temp/ logs/"
