@@ -13,8 +13,6 @@
 #- name: creating shrine database user
 #  shell: mysql -u root --execute "CREATE USER 'shrine'@'localhost' IDENTIFIED BY 'demouser';"
 
-- name: creating mysql databases
-  shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE adapterAuditDB;"
-  shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE qepAuditDB;"
-  shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE stewardDB;"
-  shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE shrine_query_history;"
+- name: updating full privilages for shrine user in mysql
+  command: mysql -u root --execute="GRANT ALL privileges ON *.* TO 'shrine'@'localhost';"
+  command: mysql -u root --execute="FLUSH PRIVILEGES;"
