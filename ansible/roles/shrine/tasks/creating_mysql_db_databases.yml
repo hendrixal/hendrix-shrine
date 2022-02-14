@@ -8,7 +8,7 @@
   shell: "sudo yum install zip unzip -y"
 
 - name: unzip shrine-setup.zip
-  shell: "unzip -O /tmp/shrine-setup.zip"
+  shell: "unzip /tmp/shrine-setup.zip"
 
 - name: creating shrine database user
   shell: mysql -u root --execute "CREATE USER 'shrine'@'localhost' IDENTIFIED BY 'demouser';"
