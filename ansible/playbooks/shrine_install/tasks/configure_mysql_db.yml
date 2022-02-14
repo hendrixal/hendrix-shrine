@@ -19,10 +19,10 @@
   #  shell: "mysql -u shrine -pdemouser"
       
   - name: creating mysql databases
-    command: mysql -u shrine -p "demouser" --execute "CREATE DATABASE adapterAuditDB;"
-    command: mysql -u shrine -p "demouser" --execute "CREATE DATABASE qepAuditDB;"
-    command: mysql -u shrine -p "demouser" --execute "CREATE DATABASE stewardDB;"
-    command: mysql -u shrine -p "demouser" --execute "CREATE DATABASE shrine_query_history;"
+    shell: mysql -u shrine -p "demouser" --execute "CREATE DATABASE adapterAuditDB;"
+    shell: mysql -u shrine -p "demouser" --execute "CREATE DATABASE qepAuditDB;"
+    shell: mysql -u shrine -p "demouser" --execute "CREATE DATABASE stewardDB;"
+    shell: mysql -u shrine -p "demouser" --execute "CREATE DATABASE shrine_query_history;"
 
 
   - name: installing mysql schemas
