@@ -1,36 +1,39 @@
 # configure mysql db
 
 ---
-  - hosts: shrinenode02
+- name: update db configuration 
+  hosts: shrinenode02
+  remote_user: centos
 
-    - name: change directory
-      shell: "cd tmp"
+  tasks:
+  - name: change directory
+    shell: "cd tmp"
 
-    - name: downloading shrine-setup to tmp directory       
-      shell: "wget https://repo.open.catalyst.harvard.edu/nexus/content/groups/public/net/shrine/shrine-setup/3.1.0/shrine-setup-3.1.0-dist.zip"
+  - name: downloading shrine-setup to tmp directory       
+    shell: "wget https://repo.open.catalyst.harvard.edu/nexus/content/groups/public/net/shrine/shrine-setup/3.1.0/shrine-setup-3.1.0-dist.zip"
  
-    - name: unzip shrine-setup.zip
-      shell: "-O shrine-setup.zip"
+  - name: unzip shrine-setup.zip
+     shell: "-O shrine-setup.zip"
       
-    - name: create mysql as shrine user
-      shell: "mysql -u shrine -pdemouser"
+  - name: create mysql as shrine user
+    shell: "mysql -u shrine -pdemouser"
       
-    - name: creating mysql databases
-      command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE adapterAuditDB;"
-      command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE qepAuditDB;"
-      command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE stewardDB;"
-      command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE shrine_query_history;"
+  - name: creating mysql databases
+    command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE adapterAuditDB;"
+    command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE qepAuditDB;"
+    command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE stewardDB;"
+    command: mysql -u shrine -p "demouser" --execute="CREATE DATABASE shrine_query_history;"
 
 
-    - name: installing mysql schemas
-      shell: "mysql -u shrine -pdemouser adapterAuditDB < shrine-setup/adapter/sql/adapterAuditDB-mysql.ddl"
-      shell: "mysql -u shrine -pdemouser shrine_query_history < shrine-setup/adapter/sql/shrine_query_history-mysql.ddl"
-      shell: "mysql -u shrine -pdemouser stewardDB < shrine-setup/dsa/sql/mysql.ddl"
-      shell: "mysql -u shrine -pdemouser qepAuditDB < shrine-setup/qep/sql/mysql.ddl"
-      shell: "mysql -u shrine -pdemouser qepAuditDB < shrine-setup/qep/sql/mysql-update.ddl"
+  - name: installing mysql schemas
+    shell: "mysql -u shrine -pdemouser adapterAuditDB < shrine-setup/adapter/sql/adapterAuditDB-mysql.ddl"
+    shell: "mysql -u shrine -pdemouser shrine_query_history < shrine-setup/adapter/sql/shrine_query_history-mysql.ddl"
+    shell: "mysql -u shrine -pdemouser stewardDB < shrine-setup/dsa/sql/mysql.ddl"
+    shell: "mysql -u shrine -pdemouser qepAuditDB < shrine-setup/qep/sql/mysql.ddl"
+    shell: "mysql -u shrine -pdemouser qepAuditDB < shrine-setup/qep/sql/mysql-update.ddl"
 
-    - name: updating full privilages for shrine user in mysql
-      command: mysql -u root --execute="GRANT ALL privileges ON *.* TO 'shrine'@'localhost';"
-      command: mysql -u root --execute="FLUSH PRIVILEGES;"
+  - name: updating full privilages for shrine user in mysql
+    command: mysql -u root --execute="GRANT ALL privileges ON *.* TO 'shrine'@'localhost';"
+    command: mysql -u root --execute="FLUSH PRIVILEGES;"
 
         
