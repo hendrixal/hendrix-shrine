@@ -6,11 +6,8 @@
   remote_user: centos
 
   tasks:
-  - name: change directory
-    shell: "cd /tmp"
-
 #  - name: downloading shrine-setup to tmp directory       
-#    shell: "wget https://repo.open.catalyst.harvard.edu/nexus/content/groups/public/net/shrine/shrine-setup/3.1.0/shrine-setup-3.1.0-dist.zip"
+#    shell: "wget -O /tmp/shrine-setup.zip https://repo.open.catalyst.harvard.edu/nexus/content/groups/public/net/shrine/shrine-setup/3.1.0/shrine-setup-3.1.0-dist.zip"
  
  # - name: unzip shrine-setup.zip
   #  shell: "-O shrine-setup.zip"
