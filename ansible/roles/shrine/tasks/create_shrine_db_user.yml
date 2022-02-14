@@ -18,5 +18,3 @@
   shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE qepAuditDB;"
   shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE stewardDB;"
   shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE shrine_query_history;"
-
-        
