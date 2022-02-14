@@ -12,6 +12,8 @@
 
 - include: install-mysql-db.yml
 
+- include: create_shrine_db_user.yml
+
 - include: creating_mysql_db_databases.yml
 
 - include: install_mysql_schemas.yml
