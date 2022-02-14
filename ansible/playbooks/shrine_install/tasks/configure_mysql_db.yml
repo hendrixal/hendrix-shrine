@@ -23,11 +23,11 @@
 
 
   - name: installing mysql schemas
-    shell: "mysql -u shrine -pdemouser adapterAuditDB < /tmp/shrine-setup/adapter/sql/adapterAuditDB-mysql.ddl"
-    shell: "mysql -u shrine -pdemouser shrine_query_history < /tmp/shrine-setup/adapter/sql/shrine_query_history-mysql.ddl"
-    shell: "mysql -u shrine -pdemouser stewardDB < /tmp/shrine-setup/dsa/sql/mysql.ddl"
-    shell: "mysql -u shrine -pdemouser qepAuditDB < /tmp/shrine-setup/qep/sql/mysql.ddl"
-    shell: "mysql -u shrine -pdemouser qepAuditDB < /tmp/shrine-setup/qep/sql/mysql-update.ddl"
+    shell: mysql --user=shrine --password=demouser --execute "adapterAuditDB < /tmp/shrine-setup/adapter/sql/adapterAuditDB-mysql.ddl"
+    shell: mysql --user=shrine --password=demouser --execute "shrine_query_history < /tmp/shrine-setup/adapter/sql/shrine_query_history-mysql.ddl"
+    shell: mysql --user=shrine --password=demouser --execute "stewardDB < /tmp/shrine-setup/dsa/sql/mysql.ddl"
+    shell: mysql --user=shrine --password=demouser --execute "qepAuditDB < /tmp/shrine-setup/qep/sql/mysql.ddl"
+    shell: mysql --user=shrine --password=demouser --execute "qepAuditDB < /tmp/shrine-setup/qep/sql/mysql-update.ddl"
 
   - name: updating full privilages for shrine user in mysql
     command: mysql -u root --execute="GRANT ALL privileges ON *.* TO 'shrine'@'localhost';"
