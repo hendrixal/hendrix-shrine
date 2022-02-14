@@ -10,8 +10,8 @@
 - name: unzip shrine-setup.zip
   shell: "unzip /tmp/shrine-setup.zip"
 
-- name: creating shrine database user
-  shell: mysql -u root --execute "CREATE USER 'shrine'@'localhost' IDENTIFIED BY 'demouser';"
+#- name: creating shrine database user
+#  shell: mysql -u root --execute "CREATE USER 'shrine'@'localhost' IDENTIFIED BY 'demouser';"
 
 - name: creating mysql databases
   shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE adapterAuditDB;"
