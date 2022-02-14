@@ -15,4 +15,6 @@
 
 - name: updating full privilages for shrine user in mysql
   command: mysql -u root --execute="GRANT ALL privileges ON *.* TO 'shrine'@'localhost';"
+  
+- name: flush privs  
   command: mysql -u root --execute="FLUSH PRIVILEGES;"

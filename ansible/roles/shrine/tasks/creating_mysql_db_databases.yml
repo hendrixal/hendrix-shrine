@@ -3,6 +3,9 @@
 ---
 - name: creating mysql databases
   shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE adapterAuditDB;"
+- name: creating qep audit db 
   shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE qepAuditDB;"
+- name: creating steward db
   shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE stewardDB;"
+- name: creating shrine query history db
   shell: mysql --user=shrine --password=demouser --execute "CREATE DATABASE shrine_query_history;"
