@@ -1,0 +1,11 @@
+# download shrine-setup
+
+---
+- name: downloading shrine-setup to tmp directory
+  shell: "wget -O /tmp/shrine-setup.zip https://repo.open.catalyst.harvard.edu/nexus/content/groups/public/net/shrine/shrine-setup/3.1.0/shrine-setup-3.1.0-dist.zip"
+ 
+- name: installing unzip
+  shell: "sudo yum install zip unzip -y"
+
+- name: unzip shrine-setup.zip
+  shell: "unzip /tmp/shrine-setup.zip -d /tmp/"
