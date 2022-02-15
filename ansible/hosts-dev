@@ -3,7 +3,7 @@
 [shrine_servers]
 shrinehub ansible_host=34.225.207.1
 shrinenode01 ansible_host=54.161.30.239
-shrinenode02 ansible_host=54.227.69.127
+shrinenode02 ansible_host=34.239.134.228
 
 [i2b2_servers]
 i2b2hub ansible_host=52.5.7.159
