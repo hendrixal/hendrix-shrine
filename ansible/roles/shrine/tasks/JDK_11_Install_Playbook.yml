@@ -43,4 +43,13 @@
   shell: "chmod g+x /opt/shrine/tomcat/conf"
 
 - name: permissions 4
-  shell: "cd /opt/shrine/tomcat | chown -R shrine webapps/ work/ temp/ logs/"
+  shell: "chown -R shrine /opt/shrine/tomcat/webapps/"
+
+- name: permissions 5
+  shell: "chown -R shrine /opt/shrine/tomcat/work"
+
+- name: permissions 6
+  shell: "chown -R shrine /opt/shrine/tomcat/temp"
+
+- name: permissions 7
+  shell: "chown -R shrine /opt/shrine/tomcat/logs"
