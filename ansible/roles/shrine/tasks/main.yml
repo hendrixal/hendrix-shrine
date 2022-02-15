@@ -10,6 +10,8 @@
 
 - include: environment variables tomcat_java.yml
 
+- include: download_shrine-setup.yml
+
 - include: install-mysql-db.yml
 
 - include: create_shrine_db_user.yml
