@@ -1,0 +1,11 @@
+# install mysql schemas
+
+---
+- name: installing mysql schemas
+  shell: mysql -u shrine -pdemouser adapterAuditDB < /tmp/shrine-setup/adapter/sql/adapterAuditDB-mysql.ddl
+- name: install schema 2 
+  shell: mysql -u shrine -pdemouser shrine_query_history < /tmp/shrine-setup/adapter/sql/shrine_query_history-mysql.ddl
+- name: install schema 3
+  shell: mysql -u shrine -pdemouser stewardDB < /tmp/shrine-setup/dsa/sql/mysql.ddl
+- name: install schema 4
+  shell: mysql -u shrine -pdemouser qepAuditDB < /tmp/shrine-setup/qep/sql/mysql.ddl

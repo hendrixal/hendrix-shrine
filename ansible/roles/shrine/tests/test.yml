@@ -2,4 +2,8 @@
 - hosts: localhost
   remote_user: root
   roles:
+<<<<<<< HEAD
     - roles/shrine_install
+=======
+    - ansible-roles/shrine
+>>>>>>> Update-001

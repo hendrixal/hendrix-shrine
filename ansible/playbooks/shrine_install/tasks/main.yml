@@ -12,7 +12,7 @@
 
 - include: install-mysql-db.yml
 
-# - include: configure_mysql_db.yml
+- include: configure_mysql_db.yml
 
 - include: configuring_database_connections.yml
 
@@ -22,6 +22,4 @@
 
 - include: installing_lucene_indicies.yml
 
-- include: adapter_mappings.yml
-
-- include: shrine_keystore.yml
+- include: install_keystore_adaptMapp.yml

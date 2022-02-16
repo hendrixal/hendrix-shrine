@@ -1,0 +1,6 @@
+This is an Ansible role to automate the deployment of SHRINE.
+
+To execute this Ansible Role run the following command:
+
+$ ansible-playbook setup-app.yml
+

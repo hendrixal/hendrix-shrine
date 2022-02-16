@@ -1,6 +1,7 @@
 # installing lucene indicies
 
 ---
+<<<<<<< HEAD
   - hosts: shrinenode02
     become: true
 
@@ -13,3 +14,18 @@
         shell: "unzip lucene_index.zip"
         shell: "unzip suggest_index.zip"
         shell: "rm lucene_index.zip suggest_index.zip"
+=======
+
+- name: change directory
+  shell: "sudo cd /opt/shrine/tomcat/lib"
+
+- name: install lucene indicies
+  shell: "sudo wget https://shrine-act-artifacts.s3.amazonaws.com/lucene-indices/lucene_index-2.0.1-cov3-3.1.0-SHRINE-3.1.0.zip -O /opt/shrine/tomcat/lib/lucene_index.zip"
+- name: install suggest index  
+  shell: "sudo wget https://shrine-act-artifacts.s3.amazonaws.com/lucene-indices/suggest_index-2.0.1-cov3-3.1.0-SHRINE-3.1.0.zip -O /opt/shrine/tomcat/lib/suggest_index.zip"
+- name: unzip lucene
+  shell: "sudo unzip /opt/shrine/tomcat/lib/lucene_index.zip"
+- name: unzip suggest
+  shell: "sudo unzip /opt/shrine/tomcat/lib/suggest_index.zip"
+  
+>>>>>>> Update-001

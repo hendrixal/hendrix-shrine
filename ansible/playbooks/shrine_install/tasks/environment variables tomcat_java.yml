@@ -1,6 +1,5 @@
 # installing environment variables for tomcat and jdk
 
-<<<<<<< HEAD
 ---
   - hosts: shrinenode02
     become: true
@@ -13,14 +12,3 @@
             export CATALINA_OPTS="$CATALINA_OPTS -server -Xms1024m -Xmx3072m -Duser.timezone=America/New_York"
             export JAVA_HOME=/usr/lib/jvm/jre-openjdk
             export JRE_HOME=$JAVA_HOME
-=======
----    
-- name: setting up tomcat environment variable
-  copy:
-    dest: "/opt/shrine/tomcat/bin/setenv.sh"
-    content: |
-      # Set Tomcat options
-      export CATALINA_OPTS="$CATALINA_OPTS -server -Xms1024m -Xmx3072m -Duser.timezone=America/New_York"
-      export JAVA_HOME=/usr/lib/jvm/jre-openjdk
-      export JRE_HOME=$JAVA_HOME
->>>>>>> Update-001

@@ -1,2 +1,6 @@
 ---
+<<<<<<< HEAD
 # handlers file for roles/shrine_install
+=======
+# handlers file for ansible-roles/shrine
+>>>>>>> Update-001

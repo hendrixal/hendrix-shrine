@@ -1,5 +1,6 @@
 # JDK 11 Install Playbook
 
+<<<<<<< HEAD
 --- 
   - hosts: shrinenode02
     become: true
@@ -44,3 +45,58 @@
 
       - name: permissions 1
         shell: "cd /opt/shrine/tomcat | chgrp -R shrine /opt/shrine/tomcat"
+=======
+---  
+- name: Updating yum packages
+  yum: name=* state=latest
+
+- name: Installing JDK 11
+  shell: "sudo yum -y install java-11-openjdk-devel"
+
+- name: Install wget/tar
+  yum:
+    name:
+      - wget
+      - tar
+    state: present  
+
+# installing tomcat
+
+- name: create tomcat directory
+  shell: "mkdir -p /opt/shrine/tomcat"
+
+- name: change directory
+  shell: "cd ~"
+
+- name: download tomcat 8.5.41
+  shell: "wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.41/bin/apache-tomcat-8.5.41.tar.gz"
+
+- name: unzip tomcat files
+  shell: "tar xvf apache-tomcat-8.5.41.tar.gz -C /opt/shrine/tomcat --strip-components=1"
+
+- name: change directory to tomcat
+  shell: "cd /opt/shrine/tomcat"
+
+# Tomcat permissions
+
+- name: permissions 1
+  shell: "cd /opt/shrine/tomcat | chgrp -R shrine /opt/shrine/tomcat"
+
+- name: permissions 2
+  shell: "chmod -R g+r /opt/shrine/tomcat/conf"
+
+- name: permissions 3
+  shell: "chmod g+x /opt/shrine/tomcat/conf"
+
+- name: permissions 4
+  shell: "chown -R shrine /opt/shrine/tomcat/webapps/"
+
+- name: permissions 5
+  shell: "chown -R shrine /opt/shrine/tomcat/work"
+
+- name: permissions 6
+  shell: "chown -R shrine /opt/shrine/tomcat/temp"
+
+- name: permissions 7
+  shell: "chown -R shrine /opt/shrine/tomcat/logs"
+>>>>>>> Update-001
