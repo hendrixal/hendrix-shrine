@@ -3,8 +3,8 @@
 [shrine_servers]
 shrinehub ansible_host=34.225.207.1
 <<<<<<< HEAD
-shrinenode01 ansible_host=34.207.89.8
-shrinenode02 ansible_host=54.167.140.167
+shrinenode01 ansible_host=34.225.207.1
+shrinenode02 ansible_host=54.161.30.239
 =======
 shrinenode01 ansible_host=54.161.30.239
 shrinenode02 ansible_host=3.89.250.27
